@@ -35,11 +35,11 @@ def create_page(content, source_url=None):
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
     props = {
-        "제목": {"title": [{"text": {"content": title}}]},
-        "날짜": {"date": {"start": today}}
+        "Title": {"title": [{"text": {"content": title}}]},
+        "Date":  {"date": {"start": today}}
     }
     if source_url:
-        props["원문링크"] = {"url": source_url}
+        props["Source URL"] = {"url": source_url}
 
     notion.pages.create(
         parent={"database_id": DB_ID},
